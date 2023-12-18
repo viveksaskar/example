@@ -1,0 +1,32 @@
+This repo was created using terraform
+
+code:
+
+terraform {
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 5.0"
+    }
+  }
+}
+
+# configure the github provider
+provider "github" {
+    token = "Use your own token"
+  
+}
+
+resource "github_repository" "example" {
+  name        = "example"
+  description = "My awesome codebase"
+
+  visibility = "public"
+
+  }
+
+# provider "github" {
+#   owner  = "viveksaskar"
+#   token  = "Use your own token"
+#   debug  = true
+# }
